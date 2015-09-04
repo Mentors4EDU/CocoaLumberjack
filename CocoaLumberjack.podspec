@@ -26,6 +26,10 @@ Pod::Spec.new do |s|
   s.module_map = 'Classes/CocoaLumberjack.modulemap'
   s.default_subspecs = 'Default', 'Extensions'
 
+  s.xcconfig = {
+      'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'  => 'YES'
+  }
+
   s.subspec 'Default' do |ss|
     ss.source_files = 'Classes/CocoaLumberjack.{h,m}'
     ss.dependency 'CocoaLumberjack/Core'
